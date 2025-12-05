@@ -4,12 +4,12 @@
 \alias{match_words}
 \title{match words}
 \usage{
-match_words(words, type = c("positive", "negative"))
+match_words(words, lexicon)
 }
 \arguments{
 \item{words}{A character vector of words from the text.}
 
-\item{type}{Either "positive" or "negative" to select the lexicon.}
+\item{lexicon}{A vector with a lexicon.}
 }
 \value{
 A vector of matched words found in the text.
@@ -23,6 +23,6 @@ or prefix.
 }
 \examples{
 words <- c("happy", "joyful", "nauseous", "nauseated")
-match_words(words, type = "positive")
-match_words(words, type = "negative")
+lexicon <- c("happ*", "joy*")
+match_words(words, lexicon)
 }

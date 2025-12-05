@@ -8,24 +8,15 @@
 #' or prefix.
 #'
 #' @param words A character vector of words from the text.
-#' @param type Either "positive" or "negative" to select the lexicon.
+#' @param lexicon A vector with a lexicon.
 #'
 #' @return A vector of matched words found in the text.
 #' @examples
 #' words <- c("happy", "joyful", "nauseous", "nauseated")
-#' match_words(words, type = "positive")
-#' match_words(words, type = "negative")
+#' lexicon <- c("happ*", "joy*")
+#' match_words(words, lexicon)
 #' @export
-match_words <- function(words, type = c("positive", "negative")) {
-
-  type <- match.arg(type)
-
-  # Use the appropriate preprocessed vector
-  if(type == "positive") {
-    lexicon <- Positive
-  } else {
-    lexicon <- Negative
-  }
+match_words <- function(words, lexicon) {
 
   # Ensure words are lowercase
   words <- tolower(words)
