@@ -2,7 +2,13 @@ Package: semanticalgorithm
 Type: Package
 Title: Simple Semantic Search via Positive and Negative Word Matching
 Version: 0.1.0
-Author: Celia Mesias Casares <celia.mesias.casares@ki.se>
+Authors@R: c(
+    person(
+      "Celia", "Mesias Casares", 
+      email = "celia.mesias.casares@ki.se", 
+      role = c("aut","cre")
+    )
+  )
 Description: Semantic search is a data search technique focused on understanding
     the contextual meaning and intent behind a user's query. The goal of this
     semantic search algorithm is summarising positive and negative words in a
