@@ -1,8 +1,11 @@
-# Preprocess text from a .txt file
-
-# This function reads a .txt file using read.delim(), converts the text
-# to lowercase, removes punctuation, splits into words, and returns a
-# clean character vector.
+#' preprocess text
+#'
+#' @description
+#' Preprocess text from a .txt file
+#'
+#' This function reads a .txt file using read.delim(), converts the text
+#' to lowercase, removes punctuation, splits into words, and returns a
+#' clean character vector.
 #'
 #' @param filepath Path to a .txt file containing raw text.
 #'

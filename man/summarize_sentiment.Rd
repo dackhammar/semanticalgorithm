@@ -2,7 +2,7 @@
 % Please edit documentation in R/summarise_sentiment.R
 \name{summarize_sentiment}
 \alias{summarize_sentiment}
-\title{Summarize positive and negative words}
+\title{summarize sentiment}
 \usage{
 summarize_sentiment(words, positive_lexicon, negative_lexicon)
 }
@@ -17,6 +17,8 @@ summarize_sentiment(words, positive_lexicon, negative_lexicon)
 A list containing sentiment summary metrics.
 }
 \description{
+Summarize positive and negative words
+
 Uses match_words() to compare text words with positive and negative
 lexicons, returning counts and ratio.
 }

@@ -2,24 +2,27 @@
 % Please edit documentation in R/match_words.R
 \name{match_words}
 \alias{match_words}
-\title{Match words using wildcard lexicon}
+\title{match words}
 \usage{
-match_words(words, lexicon)
+match_words(words, type = c("positive", "negative"))
 }
 \arguments{
-\item{words}{Character vector from preprocess_text().}
+\item{words}{A character vector of words from the text.}
 
-\item{lexicon}{Character vector of patterns (e.g., "nause*", "*happy").}
+\item{type}{Either "positive" or "negative" to select the lexicon.}
 }
 \value{
-Vector of matched text words.
+A vector of matched words found in the text.
 }
 \description{
-Compares text words to lexicon patterns (positive or negative), supporting
-'*' as prefix or suffix wildcard.
+Match words in text using preloaded positive and negative lexicons
+
+This function compares a vector of words from a text to the internal
+Positive and Negative vectors. It supports "*" as a wildcard suffix
+or prefix.
 }
 \examples{
 words <- c("happy", "joyful", "nauseous", "nauseated")
-neg <- c("nause*")
-match_words(words, neg)
+match_words(words, type = "positive")
+match_words(words, type = "negative")
 }

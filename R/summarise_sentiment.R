@@ -1,3 +1,6 @@
+#' summarize sentiment
+#'
+#' @description
 #' Summarize positive and negative words
 #'
 #' Uses match_words() to compare text words with positive and negative

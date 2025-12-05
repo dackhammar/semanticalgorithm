@@ -1,3 +1,6 @@
+#' match words
+#'
+#' @description
 #' Match words in text using preloaded positive and negative lexicons
 #'
 #' This function compares a vector of words from a text to the internal
