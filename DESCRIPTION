@@ -1,22 +1,18 @@
 Package: semanticalgorithm
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Simple Semantic Search via Positive and Negative Word Matching
 Version: 0.1.0
-Authors@R: c(
-    person(
-      "Jane", "Doe",
-      email = "jane@example.com",
-      role = c("aut", "cre")
-    )
-  )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Author: Celia Mesias Casares <celia.mesias.casares@ki.se>
+Description: Semantic search is a data search technique focused on understanding
+    the contextual meaning and intent behind a user's query. The goal of this
+    semantic search algorithm is summarising positive and negative words in a
+    document
+License: MIT
 Encoding: UTF-8
-LazyData: true
-URL: https://github.com/celmes-01/semanticalgorithm
-BugReports: https://github.com/celmes-01/semanticalgorithm/issues
-Suggests: 
+Imports:
+    stats
+Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+RoxygenNote: 7.3.3

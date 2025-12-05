@@ -1,1 +1,3 @@
-exportPattern("^[[:alpha:]]+")
+export(preprocess_text)
+export(match_words)
+export(summarize_sentiment)

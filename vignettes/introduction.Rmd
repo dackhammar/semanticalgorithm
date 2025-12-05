@@ -1,11 +1,14 @@
 ---
-title: "introduction"
+title: "Semantic Algorithm Package"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{introduction}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+Semantic search is data search technique focused on understanding the contextual meaning and intent behind a user's query. The goal of this semantic search algorithm is *summarising positive and negative words* in a document.
+
+Topic-based semantic search
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -16,4 +19,72 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(semanticalgorithm)
+```
+
+
+
+*PROCESSING THE DATA* 
+
+First, we want to load the data we will be using for the analysis. In my case, it is a .txt file containing plain text (provided by the assingment instructions, called "Document_negative". For this, I just wrote down the path to my file. 
+
+```{loading dataset}
+data <- readLines("~/Downloads/Example_negative.txt") #creates a vector
+
+#To create a continuos string:
+
+text_raw <- readLines("~/Downloads/Example_negative.txt")
+text <- paste(text_raw, collapse = " ") 
+```
+
+Next, we will process the text for semantic analysis. This will include detecting positive and negative words as well as summarising them for quantification. 
+
+``` {processing text}
+
+text <- tolower(text) #turns everything into lower case
+text <- gsub("[[:punct:]]", " ", text) #remove punctuation
+
+text <- gsub("\\s+", " ", text)
+text <- trimws(text) #removes extra spaces
+
+words <- unlist(strsplit(text, " ")) #turns words into vectors
+```
+
+To define positive words, I found a page containing 500 words with positive associations (https://www.goodgoodgood.co/articles/positive-words). I created a .txt file with a list of these words, which will not be added and processed similarly as the "Example_negative" file. 
+
+The same was done for negative words, with the lexicon being extracted from the following page: https://www.thesaurus.com/e/writing/negative-words-that-start-with-a-r-d/
+
+``` {create lexicon of positive and negative words}
+
+positive_words_raw <- readLines("~/Downloads/positive_words.txt")
+positive_words <- paste(positive_words_raw, collapse = " ")
+positive_words <- tolower(positive_words)
+positive_words <- gsub("[[:punct:]]", " ", positive_words)
+positive_words <- gsub("\\s+", " ", positive_words)
+positive_words <- trimws(positive_words)
+Positive <- unlist(strsplit(positive_words, " ")) #"Positive" stores words as vectors
+
+negative_words_raw <- readLines("~/Downloads/negative_words.txt")
+negative_words <- paste(negative_words_raw, collapse = " ")
+negative_words <- tolower(negative_words)
+negative_words <- gsub("[[:punct:]]", " ", negative_words)
+negative_words <- gsub("\\s+", " ", negative_words)
+negative_words <- trimws(negative_words)
+Negative <- unlist(strsplit(negative_words, " "))
+
+```
+
+
+Finally, to obtain the outcome of the search:
+```{search}
+
+summary <- list(
+     total_words = length(words),
+     positive_count = length(positives_found),
+     negative_count = length(negatives_found),
+     Positive = positives_found,
+     Negative = negatives_found
+)
+
+summary
+
 ```
