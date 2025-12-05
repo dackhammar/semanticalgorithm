@@ -45,8 +45,5 @@ match_words <- function(words, lexicon) {
     matches <- c(matches, matched)
   }
 
-  # Remove duplicates if needed
-  matches <- unique(matches)
-
   return(matches)
 }

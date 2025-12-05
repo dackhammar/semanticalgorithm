@@ -30,7 +30,7 @@ summarize_sentiment <- function(words, positive_lexicon, negative_lexicon) {
     n_positive = length(positives),
     n_negative = length(negatives),
     ratio = ratio,
-    positive_words = positives,
-    negative_words = negatives
+    positive_words = unique(positives),
+    negative_words = unique(negatives)
   )
 }
